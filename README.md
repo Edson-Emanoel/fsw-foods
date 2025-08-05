@@ -9,3 +9,9 @@ npm install -D ts-node
 npx prisma db seed
 
 npx shadcn@latest init
+
+npx shadcn@latest add card
+
+npx shadcn@latest add button
+
+npm install -D prettier prettier-plugin-tailwindcss
