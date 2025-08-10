@@ -7,11 +7,19 @@ const ProductList = async () => {
             discountPercentage: {
                 gt: 0,
             }
+        },
+        take: 10, // Pega apenas 10 registros
+        include: { // Inclui o "registro" do restaurante
+            restaurant: {
+                select: {
+                    name: true
+                }
+            }
         }
     })
 
     return (
-        <div className="">
+        <div className="flex gap-4 overflow-x-scroll [&::-webkit-scrollbar]:hidden px-5">
             {products.map((product) => (
                 <ProductItem key={product.id} product={product} />
             ))}
