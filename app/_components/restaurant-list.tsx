@@ -1,4 +1,5 @@
 import { db } from "../_lib/prisma";
+import RestaurantItem from "./restaurant-item";
 
 const RestaurantList = async () => {
     // TODO: Pegar restaurantes com maior número de pedidos
@@ -7,9 +8,7 @@ const RestaurantList = async () => {
     return ( 
         <div className="flex gap-4 overflow-x-scroll [&::-webkit-scrollbar]:hidden px-5">
             {restaurants.map((restaurant) => (
-                <div className="bg-blue-700">
-                    <h1>{restaurant.name}</h1>
-                </div>
+                <RestaurantItem restaurant={restaurant} key={restaurant.id} />
             ))}
         </div>
     );

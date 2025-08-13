@@ -27,6 +27,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
                     className="rounded-lg object-cover shadow-md"
                 />
 
+                {/* Disconto */}
                 {product.discountPercentage && (
                     <div className="absolute gap-[2px] top-2 left-2 bg-primary px-2 py-[2px] rounded-full flex items-center text-white">
                         <ArrowDownIcon size={12} />
