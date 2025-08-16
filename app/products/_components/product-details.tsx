@@ -100,7 +100,7 @@ const ProductDetails = ({product, complementaryProducts}: ProductDetailsProps) =
                             <p className="text-xs font-semibold">
                                 {formatCurrency(Number(product.restaurant.deliveryFee))}
                             </p>
-                        ) : (
+                        ) : ( 
                             <p className="text-xs font-semibold">
                                 Grátis
                             </p>
@@ -133,6 +133,10 @@ const ProductDetails = ({product, complementaryProducts}: ProductDetailsProps) =
             <div className="mt-6 space-y-3">
                 <h3 className="font-semibold px-5">Sucos</h3>
                 <ProductList products={complementaryProducts} />
+            </div>
+
+            <div className="px-5 mt-6">
+                <Button className="w-full">Adicionar à sacola</Button>
             </div>
         </div>    
     );
