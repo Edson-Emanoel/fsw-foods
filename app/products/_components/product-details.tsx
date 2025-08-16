@@ -36,15 +36,14 @@ const ProductDetails = ({product, complementaryProducts}: ProductDetailsProps) =
         });
 
     return ( 
-        <div className="py-5">
+        <div className="relative z-50 mt-[-1.5rem] rounded-tl-lg rounded-tr-lg bg-white py-5 ">
             {/* Restaurante */}
-            <div className="flex items-center gap-[0.375rem] ">
-                <div className="relative h-4 w-4 px-5s">
+            <div className="flex items-center gap-[0.375rem] px-5">
+                <div className="relative h-4 w-4">
                     <Image
-                        src={product!.restaurant.imageUrl}
+                        src={product.restaurant.imageUrl}
                         alt={product.restaurant.name}
-                        width={0}
-                        height={0}
+                        fill
                         className="rounded-full object-cover"
                     />
                 </div>
