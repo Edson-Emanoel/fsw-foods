@@ -9,6 +9,7 @@ import { Button } from "@/app/_components/ui/button";
 import { useState } from "react";
 import { Card } from "@/app/_components/ui/card";
 import ProductList from "@/app/_components/products-list";
+import DeliveryInfo from "@/app/_components/delivery-info";
 
 interface ProductDetailsProps {
     product: Prisma.ProductGetPayload<{
@@ -88,37 +89,7 @@ const ProductDetails = ({product, complementaryProducts}: ProductDetailsProps) =
 
             {/* Dados da Entrega */}
             <div className="px-5">
-                <Card className="mt-6 flex justify-around py-3">
-                    {/* CUSTO */}
-                    <div className="flex flex-col items-center">
-                        <div className="flex items-center gap-1 text-muted-foreground">
-                            <span className="text-xs">Entrega</span>
-                            <BikeIcon size={14} />
-                        </div>
-                        
-                        {Number(product.restaurant.deliveryFee) > 0 ? (
-                            <p className="text-xs font-semibold">
-                                {formatCurrency(Number(product.restaurant.deliveryFee))}
-                            </p>
-                        ) : ( 
-                            <p className="text-xs font-semibold">
-                                Grátis
-                            </p>
-                        )}
-                    </div>
-
-                    {/* TEMPO */}
-                    <div className="flex flex-col items-center">
-                        <div className="flex items-center gap-1 text-muted-foreground">
-                            <span className="text-xs">Tempo</span>
-                            <TimerIcon size={14} />
-                        </div>
-                        
-                        <p className="text-xs font-semibold">
-                             {product.restaurant.deliveryTimeMinutes} min
-                        </p>
-                    </div>
-                </Card>
+                <DeliveryInfo restaurant={product.restaurant} />
             </div>
 
             {/* Descricao */}

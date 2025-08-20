@@ -7,7 +7,7 @@ import Link from "next/link";
 
 interface RestaurantItemProps{
     restaurant: Restaurant
-}
+} 
 
 const RestaurantItem = ({restaurant}: RestaurantItemProps) => {
     return  (
