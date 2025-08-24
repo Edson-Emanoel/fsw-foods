@@ -1,16 +1,42 @@
-import { SearchIcon } from "lucide-react";
-import { Button } from "./ui/button";
+"use client"
+
 import { Input } from "./ui/input";
+import { Button } from "./ui/button";
+import { SearchIcon } from "lucide-react";
+import { FormEventHandler, useState } from "react";
+import { useRouter } from "next/navigation";
 
 const Search = () => {
-    return (
-        <div className="flex gap-2">
-            <Input placeholder="Buscar Restaurantes" className="border-none bg-primary-foreground" />
+    const router = useRouter()
+    const [search, setSearch] = useState("")
+    
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setSearch(e.target.value)
+    }
 
-            <Button size="icon" className="w-10 h-10">
+    const handleSearchSubmit: FormEventHandler<HTMLFormElement> = (e) => {
+        e.preventDefault();
+        
+        if(!search){
+            return;
+        }
+
+        router.push(`/restaurants?search=${search}`);
+    };
+
+    return (
+        <form className="flex gap-2" onSubmit={handleSearchSubmit}>
+            <Input
+                placeholder="Buscar Restaurantes"
+                className="border-none bg-primary-foreground"
+                onChange={handleChange}
+                value={search}
+            />
+
+            <Button size="icon" type="submit">
                 <SearchIcon size={20} />
             </Button>
-        </div>
+        </form>
     );
 }
  
