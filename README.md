@@ -14,4 +14,6 @@ npx shadcn@latest add card
 
 npx shadcn@latest add button
 
+npx shadcn@latest add sheet
+
 npm install -D prettier prettier-plugin-tailwindcss
