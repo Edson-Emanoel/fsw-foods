@@ -11,7 +11,7 @@ const Cart = () => {
     useContext(CartContext);
 
     return (
-        <div className="flex">
+        <div className="fle flex-col">
             <div className="space-y-4">
                 {products.map((product) => (
                     <CartItem key={product.id} cartProduct={product}  />

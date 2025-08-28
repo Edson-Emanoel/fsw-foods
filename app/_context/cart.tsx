@@ -1,6 +1,6 @@
 "use client"
 
-import { Prisma, Product } from "@prisma/client";
+import { Prisma } from "@prisma/client";
 import { createContext, ReactNode, useMemo, useState } from "react";
 import { calculateProductTotalPrice } from "../_helpers/price";
 
@@ -97,17 +97,21 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         return setProducts((prev) => prev.filter((product) => product.id !== productId))
     }
 
-    const addProductToCart = (product: Prisma.ProductGetPayload<{
-        include: {
-            restaurant: {
-                select: {
-                    deliveryFee: true;
+    const addProductToCart = (
+        product: Prisma.ProductGetPayload<{
+            include: {
+                restaurant: {
+                 select: {
+                     deliveryFee: true;
+                 }
                 }
             }
-        }
-    }>, quantity: number) => {
+        }>,
+        quantity: number) => {
         // Verificar se o produto já está no carrinho
-        const isProductAlreadyOnCart = products.some(product => product.id === product.id)
+        const isProductAlreadyOnCart = products.some(
+            (cartProduct) => cartProduct.id === product.id
+        )
 
         // Se estiver no carrinho muda a quantidade
         if(isProductAlreadyOnCart){
@@ -121,7 +125,8 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
                     }
 
                     return cartProduct;
-                }));
+                })
+            );
         }
 
         // Se não adiciona-lo com a quantidade recebida

@@ -16,4 +16,8 @@ npx shadcn@latest add button
 
 npx shadcn@latest add sheet
 
+npx shadcn@latest add separator
+
+npx shadcn@latest add dialog
+
 npm install -D prettier prettier-plugin-tailwindcss
