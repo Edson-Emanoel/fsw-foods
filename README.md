@@ -1,6 +1,6 @@
-### Template de Projeto de Restaurante
+# Template de Projeto de Restaurante
 
-#### Projeto feito com as seguintes tecnologias
+## Projeto feito com as seguintes tecnologias
 
   <div style="display: flex; align-items: center;">
     <span>Next js</span>
@@ -48,7 +48,7 @@
   </div>
 
 
-#### Alguns dos Comandos utilizados na criação e configuração do projeto
+## Alguns dos Comandos utilizados na criação e configuração do projeto
 
 npm install prisma --save-dev
 
