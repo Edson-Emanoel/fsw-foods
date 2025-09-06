@@ -1,5 +1,25 @@
 # Template de Projeto de Restaurante
 
+## Como o Projeto ficou:
+
+  ### No Mobile:
+
+  - Página Principal:
+
+  <img src="./public/MobileHome.png" alt="Alt 01" />
+
+  - Página de Categoria de Produtos:
+
+  <img src="./public/MobileCategories.png" alt="Alt 02" />
+
+  - Página de Detalhes do Produtos:
+
+  <img src="./public/MobileProductDetail.png" alt="Alt 03" />
+
+  - Sacola de Produtos:
+
+  <img src="./public/MobileCart.png" alt="Alt 04" />
+
 ## Projeto feito com as seguintes tecnologias
 
   <div style="display: flex; align-items: center;">
@@ -46,7 +66,6 @@
         style="border-radius: 8px; margin: 5px;" 
     />
   </div>
-
 
 ## Alguns dos Comandos utilizados na criação e configuração do projeto
 
