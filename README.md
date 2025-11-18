@@ -1,94 +1,58 @@
-# Template de Projeto de Restaurante
+# FSW Foods
 
-## Como o Projeto ficou:
+**Template completo de restaurante/delivery — mobile first**
 
-  ### No Mobile:
+<div align="center">
 
-  - Página Principal:
+### Mobile
 
-  <img src="./public/MobileHome.png" alt="Alt 01" />
+| Home                                                        | Categorias                                                              | Detalhe do Produto                                                      | Sacola                                                        |
+| ----------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ------------------------------------------------------------- |
+| <img src="./public/MobileHome.png" alt="Home" width="280"/> | <img src="./public/MobileCategories.png" alt="Categorias" width="280"/> | <img src="./public/MobileProductDetail.png" alt="Produto" width="280"/> | <img src="./public/MobileCart.png" alt="Sacola" width="280"/> |
 
-  - Página de Categoria de Produtos:
+</div>
 
-  <img src="./public/MobileCategories.png" alt="Alt 02" />
+---
 
-  - Página de Detalhes do Produtos:
+<div align="center">
 
-  <img src="./public/MobileProductDetail.png" alt="Alt 03" />
+[![Next.js 14](https://img.shields.io/badge/Next.js-14.2.31-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org)
+[![React 18](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4.1-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
+[![Prisma](https://img.shields.io/badge/Prisma-6.13.0-2D3748?style=for-the-badge&logo=prisma&logoColor=white)](https://prisma.io)
+[![shadcn/ui](https://img.shields.io/badge/shadcn/ui-latest-black?style=for-the-badge)](https://ui.shadcn.com)
 
-  - Sacola de Produtos:
+</div>
 
-  <img src="./public/MobileCart.png" alt="Alt 04" />
+---
 
-## Projeto feito com as seguintes tecnologias
+### Tech Stack
 
-  <div style="display: flex; align-items: center;">
-    <span>Next js</span>
-    <img 
-        src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white" 
-        alt="Next JS"
-        style="border-radius: 8px; margin: 5px;" 
-    />
-  </div>
+- **Next.js 14.2.31** (App Router)
+- **React 18** + **TypeScript 5**
+- **Tailwind CSS 3.4.1** + `tailwindcss-animate`
+- **shadcn/ui** (Dialog, Sheet, Card, Button, Separator)
+- **Prisma 6.13.0** + PostgreSQL (com seed via `ts-node`)
+- **lucide-react** para ícones
 
-  <div style="display: flex; align-items: center;">
-    <span>TypeScript</span>
-    <img 
-        src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white" 
-        alt="TypeScript"
-        style="border-radius: 8px; margin: 5px;" 
-    />
-  </div>
+---
 
-  <div style="display: flex; align-items: center;">
-    <span>TailwindCSS</span>
-    <img 
-        src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" 
-        alt="TailwindCSS"
-        style="border-radius: 8px; margin: 5px;" 
-    />
-  </div>
+### Comandos que foram usados
 
-  <div style="display: flex; align-items: center;">
-    <span>Prisma</span>
-    <img 
-        src="https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white" 
-        alt="Prisma"
-        style="border-radius: 8px; margin: 5px;" 
-    />
-  </div>
-
-  <div style="display: flex; align-items: center;">
-    <span>Shadcn</span>
-    <img 
-        src="https://img.shields.io/badge/shadcn%2Fui-black?style=for-the-badge" 
-        alt="Shadcn"
-        style="border-radius: 8px; margin: 5px;" 
-    />
-  </div>
-
-## Alguns dos Comandos utilizados na criação e configuração do projeto
-
+```bash
+# Prisma
 npm install prisma --save-dev
-
 npx prisma init --datasource-provider postgresql
-
 npx prisma migrate dev --name init_database
+npx prisma db seed        # executa ./prisma/seed.ts
+```
 
-npm install -D ts-node
-
-npx prisma db seed
+# shadcn/ui
 
 npx shadcn@latest init
+npx shadcn@latest add card button sheet dialog separator
 
-npx shadcn@latest add card
-
-npx shadcn@latest add button
-
-npx shadcn@latest add sheet
-
-npx shadcn@latest add separator
-
-npx shadcn@latest add dialog
+# Formatação
 
 npm install -D prettier prettier-plugin-tailwindcss
